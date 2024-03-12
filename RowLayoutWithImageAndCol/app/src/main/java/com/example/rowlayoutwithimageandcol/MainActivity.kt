@@ -36,7 +36,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-
+                    RowLayoutWithCol()
                 }
             }
         }
@@ -45,31 +45,61 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun RowLayoutWithCol(){
-    Row (
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(10.dp)
-    ) {
-        Image(painter = painterResource(
-            id = R.drawable.sajid),
-            contentDescription = "Sajid's Image",
-            contentScale = ContentScale.Crop,
-            modifier = Modifier
-                .size(width = 60.dp, height = 60.dp)
-                .clip(shape = CircleShape)
-        )
 
-        Column(
+    Column {
+        Row (
             modifier = Modifier
-                .padding(start = 10.dp),
-                    horizontalAlignment = Alignment.Start,
-                    verticalArrangement = Arrangement.Center
-
+                .fillMaxWidth()
+                .padding(10.dp)
         ) {
-            Text(text = "Sajid Ali", style = MaterialTheme.typography.headlineLarge ,fontWeight = FontWeight.Bold)
-            Text(text = "3 hours ago ", style = MaterialTheme.typography.bodySmall)
+            Image(painter = painterResource(
+                id = R.drawable.sajid),
+                contentDescription = "Sajid's Image",
+                contentScale = ContentScale.Crop,
+                modifier = Modifier
+                    .size(width = 60.dp, height = 60.dp)
+                    .clip(shape = CircleShape)
+            )
+
+            Column(
+                modifier = Modifier
+                    .padding(start = 10.dp),
+                horizontalAlignment = Alignment.Start,
+                verticalArrangement = Arrangement.Center
+
+            ) {
+                Text(text = "Sajid Ali", style = MaterialTheme.typography.headlineLarge ,fontWeight = FontWeight.Bold)
+                Text(text = "3 hours ago ", style = MaterialTheme.typography.bodySmall)
+            }
+
         }
 
+        Row (
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(10.dp)
+        ) {
+            Image(painter = painterResource(
+                id = R.drawable.sajid),
+                contentDescription = "Sajid's Image",
+                contentScale = ContentScale.Crop,
+                modifier = Modifier
+                    .size(width = 60.dp, height = 60.dp)
+                    .clip(shape = CircleShape)
+            )
+
+            Column(
+                modifier = Modifier
+                    .padding(start = 10.dp),
+                horizontalAlignment = Alignment.Start,
+                verticalArrangement = Arrangement.Center
+
+            ) {
+                Text(text = "Shafique  Bakri", style = MaterialTheme.typography.headlineLarge ,fontWeight = FontWeight.Bold)
+                Text(text = "2 hours ago ", style = MaterialTheme.typography.bodySmall)
+            }
+
+        }
     }
 }
 
