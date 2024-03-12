@@ -17,6 +17,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.NotificationsActive
+import androidx.compose.material.icons.rounded.Add
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -55,6 +56,8 @@ fun RowLayoutWithCol(){
 
     Column {
         Row (
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween,
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(10.dp)
@@ -93,12 +96,24 @@ fun RowLayoutWithCol(){
                 Text(text = "3 hours ago ", style = MaterialTheme.typography.bodySmall)
             }
 
+            Icon(
+                Icons.Rounded.Add,
+                contentDescription = "Add",
+                tint = Color.Gray,
+                modifier = Modifier
+                    .size(30.dp)
+                    .clip(shape = CircleShape)
+            )
+
         }
 
         Row (
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween,
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(10.dp)
+
         ) {
             Box{
                 Image(painter = painterResource(
@@ -130,9 +145,25 @@ fun RowLayoutWithCol(){
                 verticalArrangement = Arrangement.Center
 
             ) {
-                Text(text = "Shafique  Bakri", style = MaterialTheme.typography.headlineLarge ,fontWeight = FontWeight.Bold)
-                Text(text = "2 hours ago ", style = MaterialTheme.typography.bodySmall)
+                Text(
+                    text = "Shafique  Bakri",
+                    style = MaterialTheme.typography.headlineLarge ,
+                    fontWeight = FontWeight.Bold
+                )
+                Text(
+                    text = "2 hours ago ",
+                    style = MaterialTheme.typography.bodySmall
+                )
             }
+
+            Icon(
+                Icons.Rounded.Add,
+                contentDescription = "Add",
+                tint = Color.Gray,
+                modifier = Modifier
+                    .size(30.dp)
+                    .clip(shape = CircleShape)
+            )
 
         }
     }
